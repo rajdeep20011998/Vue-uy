@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <!--- <h1>{{name}}</h1>
+        <button v-on:click.right="changeName('SRH',$event)">
+            Change name
+        </button>
+    </div>-->
+    <Form v-on:submit.prevent="handleForm">
+        <input/>
+        <button type="submit">
+            Submit
+        </button>
+    </Form>
+    
+</body>
+<script>
+    const App = {
+        data(){
+            return{
+                 name:'CSK'
+            }
+        },
+        methods:{
+            handleForm(){
+                event.preventDefault()
+                console.log('submit form')
+            },
+            changeName(newName,$event){
+                this.name=newName;
+                console.log(event)
+
+            }
+        } 
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+</html>

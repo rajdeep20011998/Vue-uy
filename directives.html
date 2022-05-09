@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <img v-bind:src="src" v-bind:alt="alt"/>
+    <hr/>
+        <a v-bind:href="d">Go to Google</a>
+    <hr/>    
+        <p v-text="myText"></p>
+    </div>
+    
+</body>
+<script>
+    //const date =new Date().toLocaleDateString()
+    const App={
+         data(){
+             return{
+                 src:'https://picsum.photos/seed/picsum/200/300',
+                 alt: 'Another image',
+                 d:'http://google.com',
+                 myText:'welcome to simplifai'
+             }
+         }
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+</html>

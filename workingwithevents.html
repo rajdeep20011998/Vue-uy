@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="box" v-on:mousemove="getCrood">
+            horvar me
+        </div>
+        <p>x: {{ x }}</p>
+        <p>y: {{ y }}</p>
+
+    </div>
+</body>
+<script>
+    const App={
+        data(){
+            return{
+                name:'rajdeep',
+                x:0,
+                y:0
+            }
+        },
+        methods:{
+            getCrood(event){
+                this.x =event.clientX;
+                this.y =event.clientY;
+            
+            }
+        }
+    }
+    Vue.createApp(App).mount('#app')
+</script>
+<style>
+    .box{
+        background:red;
+        width:200px;
+        height:200px;
+    }
+</style>
+</html>

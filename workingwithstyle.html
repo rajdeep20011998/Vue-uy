@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div class="element"
+         v-bind:class="[
+         colors.blueClass.active? colors.blueClass.name:'',
+         colors.redClass.active ? colors.redClass.name:''
+         ]"
+         v-bind:="newStyle"
+         >
+            Hello Rajdeep you are awesome Frontend Developer
+             
+        </div>
+        <hr/>
+        <div v-on:click="colors.redClass.active =!colors.redClass.active,newStyle.fontSize='190px'">
+            on click please update the color
+
+        </div>
+        
+            
+             
+    </div>  
+   
+
+</body>
+<script >
+    const App={
+data(){
+    return{
+        newStyle:{
+                    fontSize:'50px',
+                    border:'5px solid green'
+                },
+        colors:{
+            blueClass:{
+                name:'blue',
+                active:true
+            },
+
+            redClass:{
+                name:'red',
+                active:false 
+        }
+            
+    }
+
+    }    
+},
+methods :{
+
+}
+}
+
+
+Vue.createApp(App).mount('#app')
+
+
+</script>
+
+<style>
+    .element{
+        color:white;
+        background: black;
+        padding: 10px;
+    }                        
+    .blue{
+        background: blue;
+    }
+    .red{
+        background: red;
+    }
+    .orange{
+        background: orange;
+    }
+    .pink{
+        background: pink;
+    }
+    .yellow{
+        background: yellow;
+    }
+    .large{
+        padding: 50px;
+    }
+</style>
+</html>

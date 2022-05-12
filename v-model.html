@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="formHandler">
+            <label>Name</label>
+            <input type="text" v-model="FormData.firstname"/>
+            <hr/>
+            <label>Last Name</label>
+            <input type="text" v-model="FormData.lastname"/>
+            <hr/>
+            <label>Age</label>
+            <input type ="text" v-model.number="FormData.age"/>
+            <hr/>
+            <label>Company</label>
+            <select name = "dropdown" v-model="FormData.company">
+                <option value = "Elop" selected>Elop</option>
+                <option value = "Simplifai">Simplifai</option>
+               
+             </select>
+            <hr/>
+            <label>Department</label>
+            <select name = "dropdown" v-model="FormData.department">
+                <option value = ".Net Developer" selected>.Net Developer</option>
+                <option value = "Frontend">Frontend</option>
+               
+             </select>
+            <!--- <hr/>
+
+            <label>Desgination</label>
+            <select name="dropdown" v-model="FormData.desgination">
+                <option value ="Intern">Intern</option>
+                <option value ="Trainee">Trainee</option>
+                <option value="Jr Developer ">Jr Developer</option>
+                <option value="Developer">Developer</option>
+                <option value="Senior Developer">Senior Developer</option>
+                <option value="Tech Lead">Tech Lead</option>
+                <option value="Consultant">Consultant</option>
+                <option value="Solution Architect">Solution Architect</option>
+                <option value="Architect">Architect</option>
+                <option value="SME">SME</option>
+            </select>--->
+
+             <hr/>
+             <input type="checkbox" id="checkbox"  v-model="FormData.checked"/>
+             <label>{{FormData.checked}}</label>
+             <hr/>
+
+
+            <button type= "submit">
+                Submit
+            </button>
+        </form>
+
+
+    </div>
+
+    
+</body>
+<script>
+    const App={
+        data(){
+            return{
+                FormData:{
+                    firstname:'',
+                    lastname:'',
+                    age:'',
+                    company:'',
+                    department:'',
+                  //  desgination:'',
+                    checked:false
+
+                }
+            }
+        },
+        methods: {
+            formHandler(){
+                console.log(this.FormData.firstname,'=firstname');
+                console.log(this.FormData.lastname,'=lastname');
+                console.log(this.FormData.age,'=age');
+                console.log(this.FormData.company,'=company');
+                console.log(this.FormData.department,'=department');
+                //console.log(this.FromData.desgination,'=desgination');
+
+            }
+
+
+        }    
+
+    }
+            
+        
+        Vue.createApp(App).mount('#app')
+    
+</script>
+</html>
